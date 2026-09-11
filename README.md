@@ -10,21 +10,32 @@ The DHT11 sensor measures the temperature and humidity and sends the data to the
 The Arduino analyzes the temperature and controls the LEDs and buzzer according to the following levels:
 
 • 🟢 0–30°C: Normal temperature → Green LED ON
+
 • 🟡 Above 30°C to 40°C: Moderate temperature → Yellow LED ON
+
 • 🔴 Above 40°C: High temperature → Red LED ON + Buzzer ON
 
 The current temperature and humidity are continuously displayed on the LCD screen.
 
 ## Components
 • Arduino Uno
+
 • DHT11/DHT22 Temperature and Humidity Sensor 
+
 • 16×2 I2C LCD Display
+
 • Green LED
+
 • Yellow LED
+
 • Red LED
+
 • Piezo Speaker / Buzzer
+
 • 220Ω Resistors
+
 • Breadboard
+
 • Jumper Wires
 
 
