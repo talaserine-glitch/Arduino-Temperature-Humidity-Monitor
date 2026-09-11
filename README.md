@@ -17,7 +17,24 @@ The Arduino analyzes the temperature and controls the LEDs and buzzer according 
 
 The current temperature and humidity are continuously displayed on the LCD screen.
 
+##  Possible Applications
+
+Similar temperature monitoring and alarm systems can be used in:
+
+• Factories and industrial facilities
+
+• Server rooms and data centers
+
+• Laboratories
+
+• Greenhouses
+
+• Electrical and electronic equipment rooms
+
+• Weather monitoring stations
+
 ## Components
+
 • Arduino Uno
 
 • DHT11/DHT22 Temperature and Humidity Sensor 
