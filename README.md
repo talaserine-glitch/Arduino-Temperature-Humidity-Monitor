@@ -24,11 +24,7 @@ The current temperature and humidity are continuously displayed on the LCD scree
 
 • 16×2 I2C LCD Display
 
-• Green LED
-
-• Yellow LED
-
-• Red LED
+• LEDS ( green, yellow, red )
 
 • Piezo Speaker / Buzzer
 
