@@ -67,4 +67,4 @@ Similar temperature monitoring and alarm systems can be used in:
 Note: For DHT22 #define DHTTYPE DHT11 , becomes #define DHTTYPE DHT22
 
 ```cpp
-![Arduino Code](lcdtemperature.ino)
+{{% raw %}}[lcdtemperature.ino](lcdtemperature.ino){{% endraw %}}
