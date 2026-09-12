@@ -64,5 +64,89 @@ Similar temperature monitoring and alarm systems can be used in:
 
 ## Arduino Code
 
+Note: For DHT22 #define DHTTYPE DHT11, becomes #define DHTTYPE DHT22
+
 ```cpp
-{{% raw %}}[lcdtemperature.ino](lcdtemperature.ino){{% endraw %}}
+#include <DHT.h>
+#include <LiquidCrystal_I2C.h>
+#include <Wire.h>
+
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+#define DHTPIN A3
+#define DHTTYPE DHT11
+
+#define GREEN_LED 5
+#define YELLOW_LED 6
+#define RED_LED 7
+#define BUZZER 8
+
+DHT dht(DHTPIN, DHTTYPE);
+
+int h;
+int t;
+
+void setup()
+{
+  Serial.begin(9600);
+  dht.begin();
+
+  lcd.init();
+  lcd.backlight();
+
+  pinMode(GREEN_LED, OUTPUT);
+  pinMode(YELLOW_LED, OUTPUT);
+  pinMode(RED_LED, OUTPUT);
+  pinMode(BUZZER, OUTPUT);
+}
+
+void loop()
+{
+  h = dht.readHumidity();
+  t = dht.readTemperature();
+
+  Serial.print("Humidity: ");
+  Serial.print(h);
+  Serial.print(" %, Temp: ");
+  Serial.print(t);
+  Serial.println(" C");
+
+  lcd.setCursor(0, 0);
+  lcd.print(" Simple Circuits");
+
+  lcd.setCursor(0, 1);
+  lcd.print(" T:");
+  lcd.print(t);
+  lcd.print("C");
+
+  lcd.setCursor(11, 1);
+  lcd.print("H:");
+  lcd.print(h);
+  lcd.print("%");
+
+  // Turn everything OFF first
+  digitalWrite(GREEN_LED, LOW);
+  digitalWrite(YELLOW_LED, LOW);
+  digitalWrite(RED_LED, LOW);
+  digitalWrite(BUZZER, LOW);
+
+  // Temperature conditions
+  if (t >= 20 && t < 30)
+  {
+    digitalWrite(GREEN_LED, HIGH);
+  }
+  else if (t >= 30 && t < 40)
+  {
+    digitalWrite(YELLOW_LED, HIGH);
+  }
+  else if (t >= 40)
+  {
+    digitalWrite(RED_LED, HIGH);
+    digitalWrite(BUZZER, HIGH);
+  }
+
+  delay(1000);
+ }
+
+
+
