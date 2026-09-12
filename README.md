@@ -51,5 +51,12 @@ Similar temperature monitoring and alarm systems can be used in:
 
 • Jumper Wires
 
+## Circuit Simulation
+
+![Circuit Simulation](circuit-simulation.jpg)
+
+
+
+
 
 
