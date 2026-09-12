@@ -64,6 +64,8 @@ Similar temperature monitoring and alarm systems can be used in:
 
 ## Arduino Code 
 
+Note: For DHT22 #define DHTTYPE DHT11 , becomes #define DHTTYPE DHT22
+
 ```cpp
 #include <DHT.h>
 #include <LiquidCrystal_I2C.h>
